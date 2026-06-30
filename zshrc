@@ -185,6 +185,17 @@ if command -v fzf &> /dev/null; then
 fi
 
 # =============================================================================
+# atuin - SQLite-backed shell history (context-rich, directory/session search)
+# =============================================================================
+# Must init AFTER fzf so atuin's Ctrl-R binding takes precedence.
+# Installed to ~/.atuin/bin; --disable-up-arrow keeps the up arrow as plain
+# history (atuin owns Ctrl-R only), preserving history-substring-search on up.
+[ -f "$HOME/.atuin/bin/env" ] && source "$HOME/.atuin/bin/env"
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
+
+# =============================================================================
 # zsh-autosuggestions Configuration
 # =============================================================================
 # Accept suggestion with right arrow or end key
