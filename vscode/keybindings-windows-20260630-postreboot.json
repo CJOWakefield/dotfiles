@@ -1,0 +1,3 @@
+// Windows keybindings - empty (all keybindings in WSL config)
+// Location: ~/.vscode-server/data/Machine/keybindings.json -> dotfiles/keybindings.json
+[]

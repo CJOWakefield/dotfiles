@@ -1,0 +1,39 @@
+{
+  // ============================================================================
+  // Minimal Windows VSCode Config - UI & Remote Connection Only
+  // ============================================================================
+  //
+  // This config contains ONLY Windows-specific settings that cannot work from WSL.
+  // ALL development settings are in WSL: ~/.vscode-server/data/Machine/settings.json
+  //
+  // Last consolidated: 2026-01-13
+  // ============================================================================
+
+  // Window management (Windows client only)
+  "window.restoreWindows": "none",
+  "window.newWindowDimensions": "maximized",
+
+  // Theme & UI layout (rendered on Windows client)
+  "workbench.colorTheme": "Houston",
+  "workbench.activityBar.location": "hidden",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.startupEditor": "none",
+
+  // Windows terminal profiles
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "terminal.integrated.profiles.windows": {
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu"]
+    }
+  },
+
+  // Remote-WSL connection
+  "remote.autoForwardPortsSource": "hybrid",
+  "remote.WSL.fileWatcher.polling": false,
+  "remote.WSL.fileWatcher.pollingInterval": 5000,
+  "remote.restoreForwardedPorts": true,
+
+  // Security - both UNC path formats for WSL access
+  "security.allowedUNCHosts": ["wsl$", "wsl.localhost"]
+}

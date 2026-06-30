@@ -1,0 +1,93 @@
+[
+    // ──────────────────────────────────────────────────────────────────────────
+    // Terminal
+    // ──────────────────────────────────────────────────────────────────────────
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
+    },
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // Command Palette & Navigation
+    // ──────────────────────────────────────────────────────────────────────────
+
+    // Command Palette (primary + fallback)
+    {
+        "key": "ctrl+shift+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.showCommands"
+    },
+
+    // Quick File Open
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+
+    // Toggle Terminal
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+
+    // Toggle Sidebar
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // Code Actions
+    // ──────────────────────────────────────────────────────────────────────────
+
+    // Format Document
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+
+    // Go to Definition
+    {
+        "key": "f12",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+
+    // Find References
+    {
+        "key": "shift+f12",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus"
+    },
+
+    // Rename Symbol
+    {
+        "key": "f2",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // Git Actions (GitLens integration)
+    // ──────────────────────────────────────────────────────────────────────────
+
+    // Toggle Git Blame
+    {
+        "key": "ctrl+shift+g b",
+        "command": "gitlens.toggleLineBlame"
+    },
+
+    // Open File History
+    {
+        "key": "ctrl+shift+g h",
+        "command": "gitlens.showQuickFileHistory"
+    }
+]

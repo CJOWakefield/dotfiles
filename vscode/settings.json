@@ -1,0 +1,262 @@
+{
+  // ============================================================================
+  // VSCode Optimizations - Lean & High-Value Configuration
+  // ============================================================================
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // General Editor Settings
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.rulers": [80, 120],
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Files
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/.venv": true,
+    "**/node_modules": true,
+    "**/.git": false
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Python Development (uv Environment Manager)
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // uv virtual environment detection and activation
+  "python.venvPath": "${workspaceFolder}",
+  "python.venvFolders": [
+    ".venv",
+    "backend/.venv",
+    "*/backend/.venv",
+    "*/.venv"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // Python interpreter auto-discovery
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/backend"
+  ],
+
+  // Enhanced Python analysis
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/backend"
+  ],
+
+  // Pytest integration
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "-v",
+    "--tb=short"
+  ],
+
+  // Ruff native server + organize imports
+  "ruff.nativeServer": true,
+  "ruff.organizeImports": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // TOML Configuration (pyproject.toml for uv)
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "[toml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // File Explorer & Navigation
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // File nesting - cleaner explorer view
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.*.ts",
+    "*.tsx": "${capture}.js, ${capture}.d.ts, ${capture}.*.tsx",
+    "*.py": "${capture}.pyc, __pycache__",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "pyproject.toml": "poetry.lock, uv.lock, .python-version"
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Editor Improvements
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Better diff editor
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
+
+  // Bracket pair colorization
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Search & Discovery
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Better search defaults
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/.venv": true,
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/dist": true,
+    "**/build": true
+  },
+
+  // Symbol search
+  "search.quickOpen.includeSymbols": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Git
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Branch protection
+  "git.branchProtection": [
+    "main",
+    "master",
+    "production"
+  ],
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.pruneOnFetch": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // GitLens
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Disable code lens clutter
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.enabled": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // WSL2 Performance Optimizations
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.ruff_cache/**": true
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Language-Specific Formatters
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Workbench & UI
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.tree.indent": 20,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Security
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "security.workspace.trust.enabled": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Extensions
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "extensions.ignoreRecommendations": false,
+  "extensions.autoUpdate": true,
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Terminal (uv-compatible)
+  // ──────────────────────────────────────────────────────────────────────────
+
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.env.linux": {
+    "UV_PYTHON_PREFERENCE": "only-managed"
+  },
+  "terminal.integrated.inheritEnv": true
+}
